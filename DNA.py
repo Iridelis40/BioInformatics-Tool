@@ -7,4 +7,4 @@ def count_nuc(seq):
     }
     for nuc in seq:
         nucleotides[f"{nuc}"]+=1
-    print(nucleotides)
+    return f"{nucleotides}"
