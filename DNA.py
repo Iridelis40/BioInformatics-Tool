@@ -18,3 +18,14 @@ def reverse_complement(seq):
     for i in rev:
         complementary.append(complements[i])
     return "".join(complementary)
+
+def GC_content(seq):
+    GC = 0
+    for nuc in seq:
+        if nuc in ["G","C"]: GC+=1
+    return GC/len(seq)*100
+
+def read_fasta():
+    with open("fasta.txt", encoding="utf-8") as fasta:
+        content = fasta.read()
+        return content
