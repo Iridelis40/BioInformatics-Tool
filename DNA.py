@@ -39,5 +39,13 @@ def read_fasta():
             content_dict[f"{x[:13]}"] = f"{x[13:]}"
         return content_dict
 
-
-        
+def GC_content_FASTA(fasta_dict):
+    #Return the sequence with the highest GC content from a fasta formatted dictionary
+    for x in fasta_dict: 
+        fasta_dict[x] = GC_content(fasta_dict[x])
+    GC_list = list(fasta_dict.values())
+    GC_list.sort(reverse=True)
+    for key, value in fasta_dict.items():
+        if value == GC_list[0]:
+            return f"{key}\n{value}"
+    
